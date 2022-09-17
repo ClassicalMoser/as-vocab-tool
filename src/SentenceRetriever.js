@@ -106,11 +106,14 @@ export default function SentenceRetriever() {
     */
 
     //NEW functions to fetch data from the backend.
-    function getExamplesTable() {
-        fetch('http://localhost:8000/qb-example-table')
+    async function getExamplesTable() {
+        fetch('http://localhost:8000/qb-example-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
-                setExamplesTable(res);
+                return res.json().then((res) => {
+                    const data = JSON.parse(res);
+                    setExamplesTable(data);
+                }) 
             } else {
                 throw new console.error('failed to fetch examples');
             }
@@ -119,13 +122,16 @@ export default function SentenceRetriever() {
         .catch(err => console.log(err))
     }
 
-    function getVocabTable() {
-        fetch('http://localhost:8000/qb-vocab-table')
+    async function getVocabTable() {
+        fetch('http://localhost:8000/qb-vocab-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
-                console.log(typeof(res));
-                console.log(res);
-                setExamplesTable(res);
+                return res.json().then((res) => {
+                    const objectResult = JSON.parse(res);
+                    console.log(`response data is ${typeof(objectResult)}`)
+                    console.log(objectResult);
+                    setVocabTable(objectResult);
+                });
             } else {
                 throw new console.error('failed to fetch vocab');
             }
@@ -133,11 +139,16 @@ export default function SentenceRetriever() {
         .catch(err => console.log(err))
     }
 
-    function getLessonsTable() {
-        fetch('http://localhost:8000/qb-lesson-table')
+
+
+    async function getLessonsTable() {
+        fetch('http://localhost:8000/qb-lesson-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
-                setExamplesTable(res);
+                return res.json().then((res) => {
+                    const data = JSON.parse(res);
+                    setLessonsTable(data);
+                })
             } else {
                 throw new console.error('failed to fetch lessons');
             }
@@ -194,7 +205,7 @@ export default function SentenceRetriever() {
 
     function getFilteredExamples() {
         const listToFilterBy = vocabIncludedSearchList
-        if(listToFilterBy.length != 0) {
+        if(listToFilterBy.length !== 0) {
             const newList = examplesTable.filter(exampleObject => {
                 for(const vocab of listToFilterBy) {
                     // checks if tagged words contatin search word
@@ -308,7 +319,7 @@ export default function SentenceRetriever() {
         setExampleList(examplesTable)
 
         getLessonsTable()
-        console.log(lessonsTable)
+        //console.log(lessonsTable)
     }, [])
 
     useEffect(() => {
@@ -399,20 +410,22 @@ export default function SentenceRetriever() {
             <label style={{textAlign: 'right', display: 'block'}}>Number of results: {exampleList.length}  </label>
 
             <table className='sentence-table'>
-                <tr>
-                    <th>Spanish</th>
-                    <th>English</th>
-                    <th>Vocab/Idioms</th>
-                </tr>
-                {exampleList.map(exampleObject => {
-                    return (<tr key={exampleObject.id}>
-                        <td>{exampleObject.id} {exampleObject.spanish}</td>
-                        <td>{exampleObject.english}</td>
-                        <td>{exampleObject.vocabIncluded.map(vocab => {
-                            return(<button className='vocab-included-button' >{vocab}</button>)
-                        })}</td>
-                    </tr>)
-                })}
+                <tbody>
+                    <tr>
+                        <th>Spanish</th>
+                        <th>English</th>
+                        <th>Vocab/Idioms</th>
+                    </tr>
+                    {exampleList.map(exampleObject => {
+                        return (<tr key={exampleObject.id}>
+                            <td>{exampleObject.id} {exampleObject.spanish}</td>
+                            <td>{exampleObject.english}</td>
+                            <td>{exampleObject.vocabIncluded.map(vocab => {
+                                return(<button className='vocab-included-button' >{vocab}</button>)
+                            })}</td>
+                        </tr>)
+                    })}
+                </tbody>
             </table>
 
         </div>
