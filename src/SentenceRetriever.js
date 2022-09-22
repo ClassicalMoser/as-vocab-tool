@@ -107,7 +107,7 @@ export default function SentenceRetriever() {
 
     //NEW functions to fetch data from the backend.
     async function getExamplesTable() {
-        fetch('http://localhost:8000/qb-example-table',{method:'GET'})
+        fetch('https://as-vocab-backend.herokuapp.com/qb-example-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
                 return res.json().then((res) => {
@@ -123,7 +123,7 @@ export default function SentenceRetriever() {
     }
 
     async function getVocabTable() {
-        fetch('http://localhost:8000/qb-vocab-table',{method:'GET'})
+        fetch('https://as-vocab-backend.herokuapp.com/qb-vocab-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
                 return res.json().then((res) => {
@@ -142,7 +142,7 @@ export default function SentenceRetriever() {
 
 
     async function getLessonsTable() {
-        fetch('http://localhost:8000/qb-lesson-table',{method:'GET'})
+        fetch('https://as-vocab-backend.herokuapp.com/qb-lesson-table',{method:'GET'})
         .then((res) => {
             if(res.ok){
                 return res.json().then((res) => {
