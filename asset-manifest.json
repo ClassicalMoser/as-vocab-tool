@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/classicalmoser.github.io/as-vocab-tool/static/css/main.92423627.css",
-    "main.js": "/classicalmoser.github.io/as-vocab-tool/static/js/main.31b27354.js",
-    "static/js/787.33009ef7.chunk.js": "/classicalmoser.github.io/as-vocab-tool/static/js/787.33009ef7.chunk.js",
-    "static/media/logo.svg": "/classicalmoser.github.io/as-vocab-tool/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/classicalmoser.github.io/as-vocab-tool/index.html",
-    "main.92423627.css.map": "/classicalmoser.github.io/as-vocab-tool/static/css/main.92423627.css.map",
-    "main.31b27354.js.map": "/classicalmoser.github.io/as-vocab-tool/static/js/main.31b27354.js.map",
-    "787.33009ef7.chunk.js.map": "/classicalmoser.github.io/as-vocab-tool/static/js/787.33009ef7.chunk.js.map"
+    "main.css": "/as-vocab-tool/static/css/main.92423627.css",
+    "main.js": "/as-vocab-tool/static/js/main.fa5d6d88.js",
+    "static/js/787.33009ef7.chunk.js": "/as-vocab-tool/static/js/787.33009ef7.chunk.js",
+    "static/media/logo.svg": "/as-vocab-tool/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/as-vocab-tool/index.html",
+    "main.92423627.css.map": "/as-vocab-tool/static/css/main.92423627.css.map",
+    "main.fa5d6d88.js.map": "/as-vocab-tool/static/js/main.fa5d6d88.js.map",
+    "787.33009ef7.chunk.js.map": "/as-vocab-tool/static/js/787.33009ef7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.92423627.css",
-    "static/js/main.31b27354.js"
+    "static/js/main.fa5d6d88.js"
   ]
 }
