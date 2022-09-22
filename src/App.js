@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './QuizApp.css';
 import SentenceRetriever from './SentenceRetriever'
 

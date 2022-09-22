@@ -344,7 +344,10 @@ export default function SentenceRetriever() {
 
     return (
         <div>
-            <h1>Sentence Lookup</h1>
+            <div className='heading'>
+                <img className='logo' src={require('./LearnCraft_Tagline_Color.png')} alt = 'logo'/>
+                <h1>Sentence Example Drilling</h1>
+            </div>
             <table>
                 <tr>
                     <td className='suggestions'>
@@ -390,7 +393,7 @@ export default function SentenceRetriever() {
                                 
                             </select>
                             
-                            <input type='submit' value='Retrieve by Lesson'></input>
+                            <input className='submit' type='submit' value='Retrieve by Lesson'></input>
                         </form>
                     </td>
                     

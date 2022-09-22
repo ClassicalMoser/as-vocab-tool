@@ -1,13 +1,58 @@
 body {
-    background-color: rgb(221, 209, 205);
+    background-color: #fff;
     margin: 0;
-    color: black;
-    font-size: x-large;
-    font-weight: bold;
+    color: #3c3c3c;
 }
+
+.heading {
+    display: flex;
+    border-bottom: 3px solid #449ac2;
+    align-content: space-between;
+}
+
+button, select {
+    background-color: #449ac2;
+    font-family: inherit;
+    border: 1px solid #3c3c3c;
+    font-size: 100%;
+    margin: 0;
+    padding: 10px;
+    color:#fff;
+    box-sizing: border-box;
+}
+
+input, textarea {
+    background-color: #fff;
+    font-family: inherit;
+    border: 1px solid #3c3c3c;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color:#3c3c3c;
+    box-sizing: border-box;
+}
+
+.submit {
+    color:#fff;
+    background-color: #449ac2;
+}
+
+button:hover, select:hover {
+    cursor: pointer;
+}
+
+.logo {
+    max-height: 250px;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
 h1 {
-    background-color: rgb(115, 69, 175);
-    color:rgb(188, 188, 214);
+    color: #3c3c3c;
+    font-weight: 900;
+    display: inline-block;
+    width: min-content;
 }
 
 table {
@@ -17,12 +62,13 @@ table {
 }
 
 th {
-    background-color: grey;
-    color:ivory
+    background-color: #6f6259;
+    color:#fff
 }
 
 td {
     vertical-align: baseline;
+    padding: 10px, 10%;
 }
 
 .sentence-table tr {
@@ -31,31 +77,23 @@ td {
     line-height: 200%;
 }
 
-tr:nth-child(even) {
-    background-color: rgb(201, 186, 139);
-}
+/*tr:nth-child(even) {
+    background-color: #b0a96f;
+}*/
 
 .retrieve-button {
-    font-size: xx-large;
-    padding: 16px 20px;
-}
-
-button, select, input {
-    font-size: x-large;
-    padding: 12px 16px;
+    padding: 10px;
 }
 
 .suggestions-searchbar {
-    font-size: x-large;
-    padding: 12px 16px;
-    width: 50%;
+    padding: 10px;
 }
 
 .chosen-vocab-term {
     display: inline;
-    background-color: burlywood;
+    background-color: #449ac2;
     font-size: large;
-
+    color: #fff;
     border: none;
     outline: none;
     padding: 12px 16px;
@@ -71,7 +109,8 @@ button, select, input {
 }*/
 
 .suggestions-content li:hover {
-    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .suggestions-content {
@@ -80,11 +119,12 @@ button, select, input {
     /*display: none;
     position: absolute;
     z-index: 1;*/
-    background-color: blanchedalmond;
+    background-color: #fff;
     height: 200px;
     overflow: auto;
     resize: vertical;
     list-style-type: none;
+    scrollbar-width: 40px;
 }
 
 .search-terms {
